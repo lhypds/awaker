@@ -19,5 +19,7 @@ try:
         timestamp = time.strftime("%Y%m%d%H%M%S", time.localtime())
         print(f"{timestamp} wakeup...")
         time.sleep(interval)  # Wait for x seconds
+except KeyboardInterrupt:
+    print("\nAwaker interrupted by user. Exiting...")
 finally:
     print("Awaker stopped.")
