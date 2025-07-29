@@ -2,7 +2,7 @@
 Awaker
 ======
 
-Move mouse every x second to keep PC awake.
+Keep PC awake.
 
 
 Setup
@@ -16,3 +16,4 @@ Run
 ---
 
 `python awaker.py`  
+Use Ctrl+C to stop the script.
