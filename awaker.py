@@ -17,7 +17,7 @@ try:
         # Simulate a key press to keep the system awake
         keyboard.press_and_release("shift")  # Press and release the Shift key
         timestamp = time.strftime("%Y%m%d%H%M%S", time.localtime())
-        print(f"{timestamp} wakeup~ ryu kun~~")
+        print(f"{timestamp} wakeup...")
         time.sleep(interval)  # Wait for x seconds
 finally:
     print("Awaker stopped.")
