@@ -2,18 +2,26 @@
 Awaker
 ======
 
-Keep PC awake.
+Keep PC awake.  
 
 
 Setup
 -----
 
-1. Run `setup.bat`.  
-2. Setup `INTERVAL` in `.env` file to set the interval in seconds.  
+Run `setup.bat`.  
+
+.env  
+
+`INTERVAL`  
+The interval in seconds.  
+
+`KEY`
+The key to simulate pressing. Default is "shift".
+Use `test_keys.bat` to find best keys.
 
 
 Run
 ---
 
-`python awaker.py`  
+`python awaker.py` or `run.bat`  
 Use Ctrl+C to stop the script.
