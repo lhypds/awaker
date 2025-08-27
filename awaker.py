@@ -9,7 +9,7 @@ load_dotenv()
 
 
 interval = int(os.getenv("INTERVAL", 1))
-key = os.getenv("KEY", "shift")
+key = os.getenv("KEY", "shift")  # shift is the default key
 print(f"INTERVAL: {interval} seconds")
 print(f"KEY: {key}")
 
