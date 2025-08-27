@@ -10,12 +10,12 @@ Setup
 
 Run `setup.bat`.  
 
-.env  
+Setup `.env`  
 
 `INTERVAL`  
 The interval in seconds.  
 
-`KEY`
+`KEY`  
 The key to simulate pressing. Default is "shift".
 Use `test_keys.bat` to find best keys.
 
