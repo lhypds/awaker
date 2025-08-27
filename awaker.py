@@ -19,7 +19,7 @@ try:
     while True:
         # Simulate a key press to keep the system awake
         keyboard.press_and_release(key)  # Press and release the specified key
-        timestamp = time.strftime("%Y%m%d%H%M%S", time.localtime())
+        timestamp = int(time.time())
         print(f"\rwakeup - {timestamp}...", end="", flush=True)
         time.sleep(interval)  # Wait for x seconds
 except KeyboardInterrupt:
