@@ -9,6 +9,7 @@ load_dotenv()
 
 
 interval = int(os.getenv("INTERVAL", 1))
+print(f"INTERVAL: {interval} seconds")
 
 
 print("Press Ctrl+C to stop the awaker.")
