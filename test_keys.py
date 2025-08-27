@@ -51,12 +51,26 @@ def test_key_availability():
 def recommend_best_keys(available_keys):
     """Recommend the best keys for keeping computer awake."""
     
-    # Priority order for awaker usage
-    priority_keys = [
-        ("f13", "Extended function key - ideal choice, rarely used by apps"),
-        ("f14", "Extended function key - excellent alternative"),
-        ("f15", "Extended function key - another good choice"),
-        ("f16", "Extended function key - good backup option"),
+    # Find the highest available F-key (f13-f24)
+    available_f_keys = []
+    for i in range(13, 25):  # f13 to f24
+        f_key = f"f{i}"
+        if f_key in available_keys:
+            available_f_keys.append(f_key)
+    
+    # Sort F-keys by number (highest first)
+    available_f_keys.sort(key=lambda x: int(x[1:]), reverse=True)
+    
+    # Priority order for awaker usage (F-keys ordered from highest to lowest)
+    priority_keys = []
+    
+    # Add F-keys in descending order
+    for f_key in available_f_keys:
+        f_num = int(f_key[1:])
+        priority_keys.append((f_key, f"Extended function key F{f_num} - rarely used by apps"))
+    
+    # Add other keys in priority order
+    other_keys = [
         ("scroll lock", "Scroll lock - rarely used in modern apps"),
         ("scrolllock", "Scroll lock (alternative name)"),
         ("pause", "Pause key - seldom used"),
@@ -67,6 +81,7 @@ def recommend_best_keys(available_keys):
         ("capslock", "Caps lock (alternative name)"),
         ("shift", "Shift key - works but might interfere with typing")
     ]
+    priority_keys.extend(other_keys)
     
     print("=== RECOMMENDATIONS FOR AWAKER ===")
     print("Keys ranked from best to worst for keeping computer awake:\n")
