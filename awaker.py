@@ -9,14 +9,16 @@ load_dotenv()
 
 
 interval = int(os.getenv("INTERVAL", 1))
+key = os.getenv("KEY", "shift")
 print(f"INTERVAL: {interval} seconds")
+print(f"KEY: {key}")
 
 
 print("Press Ctrl+C to stop the awaker.")
 try:
     while True:
         # Simulate a key press to keep the system awake
-        keyboard.press_and_release("shift")  # Press and release the Shift key
+        keyboard.press_and_release(key)  # Press and release the specified key
         timestamp = time.strftime("%Y%m%d%H%M%S", time.localtime())
         print(f"\rwakeup - {timestamp}...", end="", flush=True)
         time.sleep(interval)  # Wait for x seconds
